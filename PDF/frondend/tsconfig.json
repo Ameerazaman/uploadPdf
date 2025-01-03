@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",                            // Specifies ECMAScript target version.
+    "lib": ["dom", "dom.iterable", "esnext"],    // Library files to include for the project.
+    "allowJs": true,                             // Allows JavaScript files to be compiled.
+    "skipLibCheck": true,                        // Skips type checking of declaration files.
+    "esModuleInterop": true,                     // Enables compatibility with non-ESM modules.
+    "allowSyntheticDefaultImports": true,        // Allows default imports for modules without a default export.
+    "strict": true,                              // Enable strict type-checking options.
+    "forceConsistentCasingInFileNames": true,    // Ensures consistent casing in file names.
+    "module": "esnext",                          // Specifies module code generation method.
+    "moduleResolution": "node",                  // Resolves modules using Node.js style.
+    "resolveJsonModule": true,                   // Allows importing JSON files as modules.
+    "noEmit": true,                              // Prevents output generation. Use for type-checking only.
+    "isolatedModules": true,                     // Ensures all files can be safely transpiled independently.
+    "jsx": "react-jsx"   ,
+    
+                        // Specifies JSX support for React 17 or newer.
+  },
+  "include": [
+    "src"                                       // Include all TypeScript files in the 'src' directory.
+  ]
+}
