@@ -24,7 +24,7 @@ function Navbar() {
     return (
         <nav className="bg-gray-900 text-white px-4 py-3 flex justify-between items-center shadow-md">
             {/* Site Name */}
-            <div className="text-xl font-bold">MyWebsite</div>
+            <div className="text-xl font-bold">PDF Simplify</div>
 
             {/* User Greeting and Logout */}
             <div className="flex items-center space-x-4">
