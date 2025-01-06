@@ -7,7 +7,7 @@ import { refreshUserAccessToken, userLogout } from '../Api/User';
 
 export const userApi: AxiosInstance = axios.create({
   // baseURL: "http://localhost:5000/api/user",
-  baseURL: "https://pdfsimplify.shop",
+  baseURL: "https://pdfsimplify.shop/api/user",
   withCredentials: true
 });
 

@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 const app = express()
 app.use(cookieParser());
 const corsOptions = {
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000","https://upload-pdf-5onx.vercel.app/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
