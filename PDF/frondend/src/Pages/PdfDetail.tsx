@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { createNewPdf, pdfDetails } from "../Api/User";
 import { PdfInterface } from "../Interface/PdfInterface";
 import { PDFDocumentProxy, getDocument } from "pdfjs-dist";
-import axios from "axios";
 import Navbar from "./Navbar";
 import toast from "react-hot-toast";
 

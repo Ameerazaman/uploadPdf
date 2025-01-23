@@ -1,13 +1,12 @@
 import axios, { AxiosInstance } from 'axios';
-import { toast } from 'react-hot-toast';
 import { store } from "../App/Store";
 import { signOut } from '../App/UserSlice';
 import { refreshUserAccessToken, userLogout } from '../Api/User';
 
 
 export const userApi: AxiosInstance = axios.create({
-  // baseURL: "http://localhost:5000/api/user",
-  baseURL: "https://pdfsimplify.shop/api/user",
+  baseURL: "http://localhost:5000/api/user",
+  // baseURL: "https://pdfsimplify.shop/api/user",
   withCredentials: true
 });
 

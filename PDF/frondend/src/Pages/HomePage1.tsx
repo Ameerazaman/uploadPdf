@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PdfInterface } from "../Interface/PdfInterface";
 import UploadPdfModal from "./UploadPdfModal";
-import { Worker, Viewer } from "@react-pdf-viewer/core";
-import "@react-pdf-viewer/core/lib/styles/index.css";
 
 interface HomePageProps {
   pdfData: PdfInterface[];
 }
 
-const HomePage: React.FC<HomePageProps> = ({ pdfData }) => {
+const HomePage1: React.FC<HomePageProps> = ({ pdfData }) => {
   const [pdfList, setPdfList] = useState<PdfInterface[]>(pdfData);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
@@ -35,17 +33,15 @@ const HomePage: React.FC<HomePageProps> = ({ pdfData }) => {
           <div
             key={pdf?._id}
             className="w-80 border shadow-lg rounded-lg overflow-hidden cursor-pointer"
-            onClick={() => navigate(`/pdf-detail/${pdf._id}`)}
+            onClick={() => navigate(`/pdf-detail/${pdf._id}`)} // Navigate to PdfDetail
           >
-            <div className="w-full h-[300px] overflow-hidden flex items-center justify-center bg-gray-100 rounded-t-lg">
-              {/* Wrapping Viewer in a div for styling */}
-              <div style={{ width: "100%", height: "100%" }}>
-                <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
-                  <Viewer fileUrl={pdf?.pdfUrl || ""} defaultScale={0.8} withCredentials={false} />
-                </Worker>
-
-              </div>
-            </div>
+            <iframe
+              src={pdf?.pdfUrl}
+              width="100%"
+              height="300px"
+              title={`PDF Preview - ${pdf?._id}`}
+              className="rounded-t-lg"
+            ></iframe>
             <div className="p-2 text-center">
               <p>{pdf?.name || "Untitled PDF"}</p>
             </div>
@@ -65,4 +61,4 @@ const HomePage: React.FC<HomePageProps> = ({ pdfData }) => {
   );
 };
 
-export default HomePage;
+export default HomePage1;
