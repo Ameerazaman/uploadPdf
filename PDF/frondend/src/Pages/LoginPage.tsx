@@ -67,7 +67,7 @@ function LoginPage() {
         <h2 className="text-2xl font-bold text-center text-gray-900">Login</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
+            <label htmlFor="username" className="block text-sm font-medium text-gray-700">Email</label>
             <input
               type="email"
               id="email"

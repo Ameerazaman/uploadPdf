@@ -218,7 +218,8 @@ export class UserServices implements IUserService {
                 console.log("File is a remote URL, downloading...");
                 const response = await axios.get(fileLocation, { responseType: 'arraybuffer' });
                 existingPdfBytes = Buffer.from(response.data); // Convert the response to a Buffer
-            } else {
+            } 
+            else {
                 console.log("File is a local path, reading...");
                 if (!fs.existsSync(fileLocation)) {
                     throw new Error(`Local file not found: ${fileLocation}`);
