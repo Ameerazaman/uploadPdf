@@ -8,13 +8,14 @@ import { fetchPdf } from '../Api/User';
 import Navbar from '../Pages/Navbar';
 import UploadPdfModal from '../Pages/UploadPdfModal';
 import { PdfInterface } from '../Interface/PdfInterface';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const user = useSelector((state: RootState) => state.user?.currentUser) as UserInterface | null;
   const [pdfData, setPdfData] = useState<PdfInterface[]>([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false)
-
+  const navigate = useNavigate()
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,7 +24,8 @@ function Home() {
           console.log(result)
           setPdfData(result)
         } else {
-          setPdfData([]); // Default to empty array if user ID is not available
+          setPdfData([]);
+          navigate('/login') // Default to empty array if user ID is not available
         }
       } catch (error) {
         console.error('Error fetching PDF:', error);

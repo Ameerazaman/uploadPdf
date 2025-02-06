@@ -4,12 +4,17 @@ import { PdfInterface } from "../Interface/PdfInterface";
 import UploadPdfModal from "./UploadPdfModal";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
+import { useSelector } from "react-redux";
+import { RootState } from "../App/Store";
+import { UserInterface } from "../Interface/UserInterface";
 
 interface HomePageProps {
   pdfData: PdfInterface[];
 }
 
 const HomePage: React.FC<HomePageProps> = ({ pdfData }) => {
+  const user = useSelector((state: RootState) => state.user?.currentUser) as UserInterface | null;
+
   const [pdfList, setPdfList] = useState<PdfInterface[]>(pdfData);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
@@ -19,6 +24,7 @@ const HomePage: React.FC<HomePageProps> = ({ pdfData }) => {
   }, [pdfList]);
 
   return (
+  
     <div>
       <h1 className="text-center text-2xl font-bold mb-4">PDF List</h1>
       <div className="flex justify-center mb-4">

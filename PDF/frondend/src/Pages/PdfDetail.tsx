@@ -28,6 +28,9 @@ function PdfDetail() {
             }
           }
         }
+        else{
+          navigate('/login')
+        }
       } catch (error) {
         console.error("Error fetching PDF details:", error);
       }
